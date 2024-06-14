@@ -1,14 +1,11 @@
 "use client";
 import { useEffect, useState } from "react";
+import UserCard from "../UserCard";
 
 const ProfileContainer = () => {
-  const [userName, setUserName] = useState("manitapaudel");
+  const [userName, setUserName] = useState("sarojbelbase");
   const [userData, setUserData] = useState([]);
   const [loading, setLoading] = useState(false);
-
-  const handleSubmit = () => {
-    console.log("We're submitting, finally!");
-  };
 
   async function fetchGithubUsersData() {
     setLoading(true);
@@ -25,9 +22,9 @@ const ProfileContainer = () => {
     fetchGithubUsersData();
   }, []);
 
-  if (loading) {
-    return <h1>Loading data...</h1>;
-  }
+  const handleSubmit = () => {
+    fetchGithubUsersData();
+  };
 
   return (
     <div>
@@ -39,13 +36,13 @@ const ProfileContainer = () => {
         onChange={(e) => setUserName(e.target.value)}
       />
       <button
-        onSubmit={handleSubmit}
+        onClick={handleSubmit}
         className="bg-green-500 hover:bg-green-600 text-white h-12 px-6 rounded-r-md"
       >
         Submit
       </button>
       <div className="mt-5">
-        Here&apos;s the GitHub details that you searched for:
+        <UserCard loading={loading} userData={userData} />
       </div>
     </div>
   );
