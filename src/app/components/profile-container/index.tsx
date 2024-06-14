@@ -3,18 +3,31 @@ import { useEffect, useState } from "react";
 
 const ProfileContainer = () => {
   const [userName, setUserName] = useState("manitapaudel");
+  const [userData, setUserData] = useState([]);
+  const [loading, setLoading] = useState(false);
+
   const handleSubmit = () => {
     console.log("We're submitting, finally!");
   };
 
   async function fetchGithubUsersData() {
+    setLoading(true);
     const res = await fetch(`https://api.github.com/users/${userName}`);
     const data = await res.json();
+
+    if (data) {
+      setUserData(data);
+      setLoading(false);
+    }
   }
 
   useEffect(() => {
     fetchGithubUsersData();
   }, []);
+
+  if (loading) {
+    return <h1>Loading data...</h1>;
+  }
 
   return (
     <div>
