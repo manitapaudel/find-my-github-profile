@@ -1,4 +1,11 @@
 import Image from "next/image";
+import {
+  EnvelopeIcon,
+  LinkIcon,
+  LocationIcon,
+  OfficeIcon,
+  UsersIcon,
+} from "../icons";
 
 const UserCard = ({
   loading,
@@ -29,8 +36,9 @@ const UserCard = ({
           Follow
         </button>
         <p>{userData.bio}</p>
-        <section className="flex gap-2">
-          <p>
+        <section className="flex gap-2 mb-3">
+          <p className="flex items-center gap-1">
+            <UsersIcon />
             <span className="font-medium">{userData.followers}</span> followers
           </p>
           &bull;
@@ -38,8 +46,27 @@ const UserCard = ({
             <span className="font-medium">{userData.following}</span> following
           </p>
         </section>
-        <p>{userData.company && userData.company}</p>
-        <p>{userData.location && userData.location}</p>
+        {userData.company && (
+          <p className="flex items-center gap-1">
+            <OfficeIcon />
+            {userData.company}
+          </p>
+        )}
+        {userData.location && (
+          <p className="flex items-center gap-1">
+            <LocationIcon /> {userData.location}
+          </p>
+        )}
+        {userData.email && (
+          <p className="flex items-center gap-1">
+            <EnvelopeIcon /> {userData.email}
+          </p>
+        )}
+        {userData.blog && (
+          <p className="flex items-center gap-1">
+            <LinkIcon /> {userData.blog}
+          </p>
+        )}
       </div>
     </div>
   );

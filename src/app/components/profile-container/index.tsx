@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
-import UserCard from "../UserCard";
+import UserCard from "../user-card";
 
 const ProfileContainer = () => {
   const [userName, setUserName] = useState("sarojbelbase");
