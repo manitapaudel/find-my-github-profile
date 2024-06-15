@@ -1,4 +1,4 @@
-<h1 aligh="center"> 🧲 Find My GitHub profile </h1>
+<h1 align="center"> 🧲 Find My GitHub profile </h1>
 
 ## Introduction
 Discovered the github API; yes, too late in the game. But I also discovered this cool idea on a freecodecamp video, and wanted to give it a try.
