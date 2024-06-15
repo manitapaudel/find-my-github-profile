@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import UserCard from "../user-card";
 
 const ProfileContainer = () => {
-  const [userName, setUserName] = useState("sarojbelbase");
+  const [userName, setUserName] = useState("manitapaudel");
   const [userData, setUserData] = useState([]);
   const [loading, setLoading] = useState(false);
 
