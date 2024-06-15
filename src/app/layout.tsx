@@ -5,7 +5,7 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Find me on GitHub!",
+  title: "Find my GitHub Profile!",
   description: "Here to help you find the GitHub profiles",
 };
 
